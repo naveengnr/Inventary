@@ -17,7 +17,11 @@ public class InventaryService {
         return inventaryRepository.findAll();
     }
 
-    public List<Inventary> getbyanme(int Id){
-        return inventaryRepository.getbyname(Id);
+    public Inventary getById(int id) {
+        return inventaryRepository.findById(id).orElse(null);
+    }
+
+    public List<Inventary> getByName(String name) {
+        return inventaryRepository.findByName(name);
     }
 }
